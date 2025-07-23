@@ -541,4 +541,15 @@ target_include_directories(QSqlCipherDriverPlugin
 )
 
 # install
-install(TARGETS QSqlCipherDriverPlugin DESTINATION ${PLUGIN_INSTALL_PREFIX}/plugins/sqldrivers)
+install(
+    TARGETS QSqlCipherDriverPlugin
+    DESTINATION ${PLUGIN_INSTALL_PREFIX}/plugins/sqldrivers
+    EXPORT ${PROJECT_NAME}-target
+)
+
+install(
+    EXPORT ${PROJECT_NAME}-target
+    NAMESPACE ${PROJECT_NAME}::
+    FILE ${PROJECT_NAME}-config.cmake
+    DESTINATION share/${PROJECT_NAME}
+)
