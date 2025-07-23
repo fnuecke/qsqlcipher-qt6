@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 project(QSqlCipher)
 message(STATUS "Building QSqlCipher plugin for Qt (SqlCipher version 4.6.1 based on SQLite 3.46.1, libtomcrypt version 1.18.2)")
-find_package(Qt6 REQUIRED COMPONENTS Core SqlPrivate BuildInternals)
+find_package(Qt6 CONFIG REQUIRED COMPONENTS Core Sql BuildInternals)
 qt_standard_project_setup()
 qt_prepare_standalone_project()
 set(CMAKE_AUTOMOC ON)
